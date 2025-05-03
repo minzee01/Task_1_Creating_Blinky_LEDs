@@ -1,0 +1,16 @@
+#include "mbed.h"
+
+#define BLINK_TIME 300ms
+
+DigitalOut led1(LED1);
+DigitalOut led2(LED2);
+DigitalOut led3(LED3);
+
+int main() {
+    while (true) {
+        led1 = led2 = led3 = 1;
+        ThisThread::sleep_for(BLINK_TIME);
+        led1 = led2 = led3 = 0;
+        ThisThread::sleep_for(BLINK_TIME);
+    }
+}
